@@ -1,0 +1,268 @@
+@import "_reset";
+@import "_mixins";
+@import "_fonts";
+
+//variables
+$main-gray: #626262;
+$support_gray: #f3f3f3;
+$aside: #b4ad9e;
+
+
+$firstBreakPoint: 600px;
+
+
+
+
+body{
+  font-family: Playfair, Arial, sans-serif;
+  font-size: 16px;
+}
+.main-content-wrapper{
+  padding-top: 56px;
+}
+
+.wrapper,
+.header-wrapper{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/**********
+HEADER styles
+***********/
+
+.dropdown{
+  position: absolute;
+  top: -500px;
+  right: -500px;
+  transition: .4s;
+}
+
+.header-wrapper{
+  background: white;
+  position: fixed;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5em;
+  .main-logo{
+    display: block;
+    max-width:119px;
+    max-height:23px;
+    width: auto;
+    height: auto;
+  }
+  .main-nav{
+    display:flex;
+  }
+  .main-menu {
+    display:block;
+    background-color: white;
+    flex-direction: column;
+    .main-menu-item{
+      display:block;
+      padding: 3vh 16vw;
+      text-transform: uppercase;
+      &:hover{
+        background-color: $main-gray;
+        color: white;
+        transition: .5s;
+      }
+    }
+  }
+  .hamburger-wrapper{
+    padding-top: 4px;
+    img{
+      width:32px;
+      height:32px;
+    }
+    &:hover{
+      .dropdown{
+      top: 0;
+      right: 0;
+      transition: .8s;
+      }
+    }
+  }
+}
+
+
+/**********
+ARTICLE styles
+***********/
+
+.main-article,
+.other-article{
+  .main-article-title,
+  .other-article-title{
+    font-weight: normal;
+  }
+  .category,
+  .leave_comment {
+    display: block;
+    color: $aside;
+    text-transform: uppercase;
+    font-size: .8em;
+    margin: 1em 0;
+  }
+  .main-article-paragraph,
+  .other-article-paragraph{
+    line-height: 1.4em;
+  }
+
+}
+
+.main-article{
+  margin: 2em 2em 4em 2em;
+}
+.main-image{
+  width: 100%;
+}
+
+.other-article{
+  margin: 2em;
+    @include mQ($firstBreakPoint) {
+      flex: 1 1 35%;
+      &:nth-child(even) {
+        margin-left: 0;
+      }
+    }
+  .other-article-title{
+  }
+  .other-article-img{
+    object-fit: cover;
+    margin: 0 auto;
+    display:block;
+    width: 80%;
+    height: 40vw;
+    @include mQ($firstBreakPoint) {
+    }
+  }
+}
+
+.other-articles-container{
+  @include mQ($firstBreakPoint) {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+  }
+}
+
+.load-more{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 4em 0;
+}
+
+.load-more-button{
+  font-family: inherit;
+  background: none;
+  font-size: 1.5em;
+  padding: 1em 2em;
+  border: 1px solid black;
+  transition: .3s;
+  &:hover{
+    background-color: $main-gray;
+    color: white;
+    border: 1px solid $main-gray;
+    transition: .5s;
+  }
+}
+
+/**********
+NEWSLETTER styles
+***********/
+.newsletter-banner{
+  width: 100%;
+  background-color: $support_gray;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  .newsletter-banner-content{
+    padding: 4em 0;
+  }
+  .newsletter-title{
+    font-weight: normal;
+    font-size: 2em;
+  }
+  .newsletter-form{
+    display: flex;
+    align-items: center;
+    padding: 2em 0;
+  }
+  .newsletter-input{
+    padding: 1em 0;
+    font-size: 1em;
+    -webkit-appearance: none;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    font-weight: 500;
+    border-bottom: 1px solid black;
+    background: none;
+    transition: .4s;
+    &:focus{
+      background: none;
+      outline: none;
+      box-shadow: 0px 1px $main-gray;
+      transition: .5s;
+    }
+  }
+  .newsletter-button{
+    margin: 0 0 0 -32px;
+    border: 0;
+    width: 32px;
+    height: 17px;
+    background-color: transparent;
+    background-image: url("../img/newsletter_ico.png");
+    transition: .3s;
+    &:focus{
+      outline: none;
+    }
+    &:hover{
+      cursor: pointer;
+      transform: scale(1.1);
+      transition: .4s;
+    }
+  }
+}
+
+/**********
+FOOTER styles
+***********/
+
+.footer-wrapper{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  background-color:$main_gray;
+  color: white;
+  .terms-privacy,
+  .socials{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .footer-content{
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    .footer-privacy-menu,
+    .social-list{
+      display:flex;
+      flex-direction: row;
+    }
+    .privacy-menu-item,
+    .social-item{
+      padding: 1em 1.5em;
+    }
+    @include mQ($firstBreakPoint) {
+
+    }
+  }
+}
