@@ -9,6 +9,8 @@ $aside: #b4ad9e;
 
 
 $firstBreakPoint: 600px;
+$secondBreakPoint: 900px;
+$thirdBreakPoint: 1200px;
 
 
 
@@ -21,8 +23,7 @@ body{
   padding-top: 56px;
 }
 
-.wrapper,
-.header-wrapper{
+.wrapper{
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -37,6 +38,10 @@ HEADER styles
   top: -500px;
   right: -500px;
   transition: .4s;
+  @include mQ($secondBreakPoint) {
+    position: static;
+
+  }
 }
 
 .header-wrapper{
@@ -48,6 +53,9 @@ HEADER styles
   justify-content: space-between;
   align-items: center;
   padding: .5em;
+  @include mQ($thirdBreakPoint){
+    position:static;
+  }
   .main-logo{
     display: block;
     max-width:119px;
@@ -63,21 +71,31 @@ HEADER styles
     background-color: white;
     flex-direction: column;
     .main-menu-item{
-      display:block;
-      padding: 3vh 16vw;
-      text-transform: uppercase;
+      a{
+        display:inline-block;
+        padding: 3vh 16vw;
+        text-transform: uppercase;
+        @include mQ($secondBreakPoint) {
+          padding: .5em 2em;
+        }
+      }
       &:hover{
         background-color: $main-gray;
         color: white;
         transition: .5s;
       }
     }
+    @include mQ($secondBreakPoint) {
+      display: flex;
+      flex-direction: row;
+    }
   }
   .hamburger-wrapper{
     padding-top: 4px;
-    img{
-      width:32px;
-      height:32px;
+    .hamburger{
+      @include mQ($secondBreakPoint) {
+        display: none;
+      }
     }
     &:hover{
       .dropdown{
@@ -117,6 +135,9 @@ ARTICLE styles
 
 .main-article{
   margin: 2em 2em 4em 2em;
+  @include mQ($secondBreakPoint) {
+    margin: 6em 4em;
+  }
 }
 .main-image{
   width: 100%;
@@ -138,7 +159,9 @@ ARTICLE styles
     display:block;
     width: 80%;
     height: 40vw;
-    @include mQ($firstBreakPoint) {
+    @include mQ($secondBreakPoint) {
+      width: 100%;
+      height: 350px;
     }
   }
 }
@@ -188,7 +211,10 @@ NEWSLETTER styles
   }
   .newsletter-title{
     font-weight: normal;
-    font-size: 2em;
+    font-size: 1.5em;
+    @include mQ($firstBreakPoint){
+      font-size: 2.3em;
+    }
   }
   .newsletter-form{
     display: flex;
@@ -262,7 +288,9 @@ FOOTER styles
       padding: 1em 1.5em;
     }
     @include mQ($firstBreakPoint) {
-
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 1em;
     }
   }
 }
