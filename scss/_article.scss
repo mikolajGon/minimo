@@ -1,0 +1,105 @@
+
+.articles-wrapper{
+  padding-left: $gutter;
+  padding-right: $gutter;
+}
+
+.main-article,
+.other-article{
+
+  .main-article-title,
+  .other-article-title{
+    font-weight: normal;
+  }
+
+  .category,
+  .leave_comment {
+    display: block;
+    color: $aside;
+    text-transform: uppercase;
+    font-size: .8em;
+    margin: 1em 0;
+  }
+
+  .main-article-paragraph,
+  .other-article-paragraph{
+    line-height: 1.4em;
+  }
+}
+
+.main-article{
+  padding-top: $gutter;
+  padding-bottom: $gutter;
+
+  @include mQ($secondBreakPoint) {
+    padding-top: 3*$gutter;
+    padding-bottom: 3*$gutter;
+  }
+}
+
+.main-image{
+  object-fit: cover;
+  width: 100%;
+  max-height: 500px;
+}
+
+.other-article{
+  margin-top: $gutter;
+  margin-bottom: $gutter;
+
+    @include mQ($firstBreakPoint) {
+      flex: 1 1 35%;
+      margin-right: $gutter;
+
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
+
+  .other-article-img{
+    object-fit: cover;
+    margin: 0 auto;
+    display:block;
+    width: 80%;
+    height: 250px;
+
+    @include mQ($secondBreakPoint) {
+      width: 100%;
+      height: 350px;
+    }
+  }
+}
+
+.other-articles-container{
+
+  @include mQ($firstBreakPoint) {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+  }
+}
+
+.load-more{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 4em 0;
+}
+
+.load-more-button{
+  font-family: inherit;
+  background: none;
+  font-size: 1.5em;
+  padding: 1em 2em;
+  border: 1px solid black;
+  transition: .3s;
+
+  &:hover{
+    background-color: $main-gray;
+    color: $white;
+    border: 1px solid $main-gray;
+    transition: .5s;
+    cursor: pointer;
+  }
+}

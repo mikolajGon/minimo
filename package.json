@@ -1,0 +1,30 @@
+{
+  "name": "minimo_blog",
+  "version": "1.0.0",
+  "description": "template based on minimo blog concept",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikolajGon/minimo.git"
+  },
+  "keywords": [
+    "blog",
+    "template",
+    "minimo"
+  ],
+  "author": "mikolajGon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikolajGon/minimo/issues"
+  },
+  "homepage": "https://github.com/mikolajGon/minimo#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}

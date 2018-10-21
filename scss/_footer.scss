@@ -1,0 +1,37 @@
+.footer-wrapper{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  background-color:$main_gray;
+  color: $white;
+
+  .terms-privacy,
+  .socials{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .footer-content{
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+
+    .footer-privacy-menu,
+    .social-list{
+      display:flex;
+      flex-direction: row;
+    }
+
+    .privacy-menu-item,
+    .social-item{
+      padding: 1em 1.5em;
+    }
+
+    @include mQ($firstBreakPoint) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 1em;
+    }
+  }
+}
