@@ -1,0 +1,85 @@
+.dropdown{
+  position: absolute;
+  top: -500px;
+  right: -500px;
+  transition: .4s;
+  @include mQ($secondBreakPoint) {
+    position: static;
+
+  }
+}
+
+.header-wrapper{
+  background: $white;
+  position: fixed;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5em;
+
+  @include mQ($thirdBreakPoint){
+    position:static;
+  }
+
+  .main-nav{
+    display:flex;
+  }
+
+  .main-logo{
+    display: block;
+    max-width: $main-logo-max-width;
+    max-height: $main-logo-max-height;
+    width: auto;
+    height: auto;
+  }
+
+  .main-menu {
+    display:block;
+    background-color: $white;
+    flex-direction: column;
+
+    .main-menu-item{
+
+      a{
+        display:inline-block;
+        padding: 3vh 16vw;
+        text-transform: uppercase;
+
+        @include mQ($secondBreakPoint) {
+          padding: .5em 2em;
+        }
+      }
+
+      &:hover{
+        background-color: $main-gray;
+        color: $white;
+        transition: .5s;
+      }
+    }
+
+    @include mQ($secondBreakPoint) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .hamburger-wrapper{
+    padding-top: 4px;
+    .hamburger{
+      @include mQ($secondBreakPoint) {
+        display: none;
+      }
+    }
+
+    &:hover{
+
+      .dropdown{
+      top: 0;
+      right: 0;
+      transition: .8s;
+      }
+    }
+  }
+}

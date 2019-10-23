@@ -1,0 +1,66 @@
+.newsletter-banner{
+  width: 100%;
+  background-color: $support-gray;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  .newsletter-banner-content{
+    padding: 4em 0;
+  }
+
+  .newsletter-title{
+    font-weight: normal;
+    font-size: 1.5em;
+
+    @include mQ($firstBreakPoint){
+      font-size: 2.3em;
+    }
+  }
+
+  .newsletter-form{
+    display: flex;
+    align-items: center;
+    padding: 2em 0;
+  }
+
+  .newsletter-input{
+    padding: 1em 0;
+    font-size: 1em;
+    -webkit-appearance: none;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    font-weight: 500;
+    border-bottom: 1px solid black;
+    background: none;
+    transition: .4s;
+
+    &:focus{
+      background: none;
+      outline: none;
+      box-shadow: 0px 1px $main-gray;
+      transition: .5s;
+    }
+  }
+
+  .newsletter-button{
+    margin: 0 0 0 -32px;
+    border: 0;
+    width: 32px;
+    height: 17px;
+    background-color: transparent;
+    background-image: url("../img/newsletter_ico.png");
+    transition: .3s;
+
+    &:focus{
+      outline: none;
+    }
+
+    &:hover{
+      cursor: pointer;
+      transform: scale(1.1);
+      transition: .4s;
+    }
+  }
+}
