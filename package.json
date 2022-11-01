@@ -23,7 +23,7 @@
   "homepage": "https://github.com/mikolajGon/minimo#readme",
   "devDependencies": {
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4"
   }
